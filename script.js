@@ -10,6 +10,11 @@ function barChart() {
     .attr('width', barChartWidth)
     .attr('height', svgHeight);
 
+    const scale=d3.scaleLinear()
+    .domain([d3.min(barChartData), d3.max(barChartData)])//Includes barChartData
+    .range([50,500])
+
+
 
 }
 
