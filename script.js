@@ -14,6 +14,30 @@ function barChart() {
     .domain([d3.min(barChartData), d3.max(barChartData)])//Includes barChartData
     .range([50,500])
 
+    //creating <g> element within SVG that will house both the <rect> tag for the bar and a<text> for a label
+    const barChart=d3.select(`svg`)
+        .selectAll(`g`)
+        .data(barChartData)
+        .enter()
+        .append('g')
+        .attr('transform',function(d,i) {
+            return 'translate(0,' +i * barChartHeight + ')'
+
+        })
+
+        barChart.append('rect')
+        .attr('fill', 'green')
+        .attr('height' , barChartHeight - barChartMargin)
+        .transition()
+        .ease(d3.easeLinear) //loads bar chart data from the left 
+        .duration(1000)
+        .attr('width',function(d){
+            return scale(d)
+        })
+
+        
+    
+
 
 
 }
