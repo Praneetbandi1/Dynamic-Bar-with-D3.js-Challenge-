@@ -1,1 +1,2 @@
 # Dynamic-Bar-with-D3.js-Challenge-
+  This project is about   creating a dynamic bar chart  that uses D3.js. Every bar needs to display the corresponding value and include transitions and hover effects.  Initialize SVG containers within the HTML body and define the dimension width to 500 pixels with a 1 pixel margin between bars. A linear scale for the x axis should be implemented  and draw the bars with widths based on the scaled data value and fixed height. Append and add text labels
