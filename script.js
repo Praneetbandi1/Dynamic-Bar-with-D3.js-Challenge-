@@ -35,9 +35,23 @@ function barChart() {
             return scale(d)
         })
 
-        
-    
+        barChart.append('text')
+        .attr('fill','pink')
+        .attr('text-anchor','end')
+        .attr('y',barChartHeight/2)
+        .attr('dy','.36em')
+        .text(function(d) {
+            return d
 
+        })
+        .transition()
+        .ease(d3.easeLinear)
+        .duration(1050)
+        .delay(1050)
+        .attr('x',function (d) {
+            return (scale(d))  
+
+        });
 
 
 }
